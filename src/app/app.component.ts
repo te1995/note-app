@@ -1,13 +1,25 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { MenuItemsComponent } from './menu-items/menu-items.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [MenuItemsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'note_app';
+  tags: string[] = [];
+
+    addTag(tagName: string) {
+        this.tags?.push(tagName);
+    }
+
+    pushRand() {
+      this.addTag("yaaa");
+    }
+
+
+
 }
