@@ -1,0 +1,45 @@
+.noteOverview {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+    padding: 2%;
+    gap: 6px;
+    overflow-y: auto;
+    border-right: 1px solid rgb(189, 189, 189);
+}
+
+.tags {
+    background-color: rgb(175, 175, 175);
+    border-radius: 20%;
+    padding: 2%;
+}
+
+.tagsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+:host {
+    display: flex;
+    flex: 1;
+}
+
+ul {
+    text-decoration: none;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.notes {
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.notes:hover {
+    background-color: rgb(241, 241, 241);
+}

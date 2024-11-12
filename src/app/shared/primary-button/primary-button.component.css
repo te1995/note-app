@@ -1,0 +1,17 @@
+:host {
+    background-color: #335CFF;
+    border-color: #335CFF;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: 0.1s transform;
+}
+
+:host:hover {
+    background-color: #2a4bcc;
+    transform: scale(1.05);
+}

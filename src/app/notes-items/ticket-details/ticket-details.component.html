@@ -1,0 +1,20 @@
+<div class="header">
+  <h2>{{ ticket().title }}</h2>
+  <span class="line"
+    >Tags
+    <ul>
+      @for(tags of ticket().tags; track $index) {
+      <li>{{ tags }}</li>
+      }
+    </ul>
+  </span>
+  <span class="line">
+    <span>Last edited</span>
+    <span>{{ ticket().lastEdit }}</span>
+  </span>
+</div>
+<hr>
+
+<div class="textContent">
+  {{ ticket().description }}
+</div>

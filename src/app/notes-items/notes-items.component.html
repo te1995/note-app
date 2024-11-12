@@ -1,1 +1,32 @@
-<p>notes-items works!</p>
+
+
+    <div class="noteOverview">
+        <button (click)="addNote()" primaryButton>+ Create New Note</button>
+        <ul>
+            @if(tickets) {
+                @for(ticket of tickets; track ticket.id) {
+                    <li (click)="displayTicket(ticket)" class ="notes">
+                        <h2>{{ticket.title}}</h2>
+                        <ul class ="tagsList">
+                            @for (tag of ticket.tags; track $index) {
+                                @if(tag !== "") {
+                                    <li class="tags">{{tag}}</li>
+                                }
+                            }
+                        </ul>
+                        <p>{{ticket.lastEdit}}</p>
+                    </li>
+                }
+            } @else {
+                <p>Please add notes!</p>
+            }
+        </ul>
+    </div>
+    @if(displayNewNote) {
+        <app-new-notes (newtodo)="addTodo($event)"></app-new-notes>
+    } @else {
+        <app-ticket-details [ticket]="ticketInDisplay"></app-ticket-details>
+
+    }
+
+

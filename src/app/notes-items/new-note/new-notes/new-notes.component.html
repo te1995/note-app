@@ -1,0 +1,28 @@
+    <form (ngSubmit)="onSubmit()" class = "flexForm">
+      <div class="line">
+        <input class ="titleInput"[(ngModel)]="title" name="title" type="text" placeholder="Enter a title...">
+      </div>
+      <table class="inputs">
+        <tr>
+          <td>
+            <label for="tags">Tags</label>
+          </td>
+          <td>
+            <input class="inputClass" [(ngModel)]="tags" name="text" type="text">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="edit">Last Edited</label>
+          </td>
+          <td>
+            <span>Not yet saved</span>
+          </td>
+        </tr>
+      </table>
+      <textarea [(ngModel)]="description" name="description" class ="textarea" placeholder="Start typing your text here"></textarea>
+      <div class="buttonForm">
+        <button primaryButton type ="submit">Save note</button>
+        <button class="cancelButton">Cancel note</button>
+      </div>
+    </form>
