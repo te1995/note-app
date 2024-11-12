@@ -12,11 +12,16 @@ import { TicketDetailsComponent } from "./ticket-details/ticket-details.componen
   styleUrl: './notes-items.component.css'
 })
 export class NotesItemsComponent {
-  tickets?: Ticket[] = [];
+  tickets?: Ticket[] = undefined;
   displayNewNote = false;
-  ticketInDisplay!: Ticket;
+  ticketInDisplay?: Ticket = this.tickets?.[this.tickets.length - 1];
+
 
   addTodo(item: Ticket) {
+if(this.tickets === undefined) {
+  this.tickets = [];
+}
+
     if(item.title === "") {
       item.title = "Untitled Note";
     }

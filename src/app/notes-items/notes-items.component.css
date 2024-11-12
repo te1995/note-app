@@ -1,10 +1,9 @@
 .noteOverview {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    max-width: 30%;
+    max-width: max(200px, 30%);
     padding: 2%;
-    gap: 6px;
+    gap: 15px;
     overflow-y: auto;
     border-right: 1px solid rgb(189, 189, 189);
 }
@@ -15,6 +14,12 @@
     padding: 2%;
 }
 
+.addNotes {
+    background-color: rgb(230, 230, 230);
+    padding: 4%;
+    border-radius: 15px;
+}
+
 .tagsList {
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +28,8 @@
 
 :host {
     display: flex;
-    flex: 1;
+    flex-grow: 0;
+    height: 100%;
 }
 
 ul {
@@ -42,4 +48,8 @@ ul {
 
 .notes:hover {
     background-color: rgb(241, 241, 241);
+}
+
+button[primaryButton] {
+    min-height: 40px;
 }

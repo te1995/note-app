@@ -15,7 +15,7 @@ export class NewNotesComponent {
   title = '';
   description = '';
   tags = '';
-  tagsArray: string[] = [' '];
+  tagsArray?: string[];
 
   onSubmit() {
     this.tagsArray = this.tags.split(' ');
@@ -23,7 +23,7 @@ export class NewNotesComponent {
     this.newtodo.emit({
       title: this.title,
       lastEdit: '12.11.2024',
-      tags: this.tagsArray,
+      tags: this.tagsArray.filter(item => (item !== " ")),
       description: this.description,
       id: Math.random().toString(),
     });

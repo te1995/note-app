@@ -10,4 +10,12 @@ img {
     max-height: 5%;
     border: none;
     background-color: white;
+    cursor: pointer;
+}
+
+.point {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
 }

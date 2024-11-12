@@ -4,7 +4,7 @@
         <button (click)="addNote()" primaryButton>+ Create New Note</button>
         <ul>
             @if(tickets) {
-                @for(ticket of tickets; track ticket.id) {
+                @for(ticket of tickets.slice().reverse(); track ticket.id) {
                     <li (click)="displayTicket(ticket)" class ="notes">
                         <h2>{{ticket.title}}</h2>
                         <ul class ="tagsList">
@@ -18,15 +18,16 @@
                     </li>
                 }
             } @else {
-                <p>Please add notes!</p>
+                <div class="addNotes">
+                    You don't have any notes yet. Start a new note to capture your thoughts and ideas.
+                </div>
             }
         </ul>
     </div>
     @if(displayNewNote) {
         <app-new-notes (newtodo)="addTodo($event)"></app-new-notes>
-    } @else {
+    } @else if(ticketInDisplay){
         <app-ticket-details [ticket]="ticketInDisplay"></app-ticket-details>
-
     }
 
 
