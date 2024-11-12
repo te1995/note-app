@@ -1,12 +1,19 @@
 .noteOverview {
     display: flex;
     flex-direction: column;
-    max-width: min(450px, 30%);
+    min-width: min(450px, 40%);
+    max-width: 30%;
     padding: 2%;
     gap: 15px;
     overflow-y: auto;
     border-right: 1px solid rgb(189, 189, 189);
 }
+
+.noteOverview * {
+    flex-wrap: 1;
+}
+
+
 
 .tags {
     background-color: rgb(175, 175, 175);
@@ -38,6 +45,12 @@ ul {
     padding: 0px;
     margin: 0px;
 }
+
+h2 {
+    font-size: calc(0.8rem + 0.5vw);
+}
+
+
 
 .notes {
     padding: 20px;
